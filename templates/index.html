@@ -8,6 +8,28 @@
       rel="stylesheet"
       href="{{ url_for('static', path='css/styles.css') }}"
     />
+
+    <!-- Add these in the <head> section -->
+<meta name="description" content="Nok-Nok provides professional plumbing, electrical, and home repair services with certified experts. Available 24/7 for all your home maintenance needs.">
+<meta name="keywords" content="home services, plumbing, electrical repairs, home repairs, professional plumbers, electricians">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.noknok.com/">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Nok-Nok - Professional Home Services">
+<meta property="og:description" content="Expert plumbing, electrical, and home repair services with certified professionals.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.noknok.com/">
+<meta property="og:image" content="{{ url_for('static', path='images/logo.png') }}">
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nok-Nok - Professional Home Services">
+<meta name="twitter:description" content="Expert plumbing, electrical, and home repair services with certified professionals.">
+<meta name="twitter:image" content="{{ url_for('static', path='images/logo.png') }}">
+
+<!-- Add this for favicon support -->
+<link rel="icon" href="{{ url_for('static', path='images/favicon.ico') }}" type="image/x-icon">
   </head>
   <body>
     <!-- Navbar -->
@@ -397,6 +419,39 @@
         </div>
       </div>
     </footer>
+    <!-- Add before closing body tag -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Nok-Nok",
+    "image": "{{ url_for('static', path='images/logo.png') }}",
+    "description": "Professional home services including plumbing, electrical, and home repairs.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "City",
+      "addressCountry": "Country"
+    },
+    "telephone": "+1 234 567 8900",
+    "email": "info@noknok.com",
+    "url": "https://www.noknok.com",
+    "sameAs": [
+      "https://www.facebook.com/noknok",
+      "https://www.twitter.com/noknok",
+      "https://www.instagram.com/noknok"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$$"
+  }
+  </script>
   </body>
   <script src="{{ url_for('static', path='js/script.js') }}"></script>
 </html>
