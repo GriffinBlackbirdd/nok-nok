@@ -1,0 +1,33 @@
+# robots.txt for noknokindia.com
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /includes/
+Disallow: /login/
+Disallow: /error_log
+Disallow: /error/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.php$
+Allow: /sitemap.xml
+
+# Allow Googlebot specific access
+User-agent: Googlebot
+Allow: /*.xml$
+Allow: /sitemap.xml
+
+# Allow Bingbot specific access
+User-agent: Bingbot
+Allow: /*.xml$
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.noknokindia.com/sitemap.xml
+
+# Crawl delay for bots to prevent server overload
+User-agent: *
+Crawl-delay: 10
+

@@ -1,0 +1,69 @@
+{
+  "name": "Nok-Nok - Professional Home Services",
+  "short_name": "Nok-Nok",
+  "description": "Book certified technicians for plumbing, electrical, and home repair services with one click.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/images/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Service",
+      "url": "/#services",
+      "description": "Book a home service"
+    },
+    {
+      "name": "Download App",
+      "url": "/#download",
+      "description": "Download our mobile app"
+    }
+  ],
+  "dir": "ltr",
+  "lang": "en-IN",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.noknok.app",
+      "url": "https://play.google.com/store/apps/details?id=com.noknok.app"
+    },
+    {
+      "platform": "itunes",
+      "id": "yourAppID",
+      "url": "https://apps.apple.com/in/app/noknok/idyourAppID"
+    }
+  ],
+  "scope": "/",
+  "categories": ["business", "home", "utilities", "lifestyle"]
+}
+

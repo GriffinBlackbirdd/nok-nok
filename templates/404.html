@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page not found - Nok-Nok provides professional plumbing, electrical, and home repair services. Book certified technicians for all your home maintenance needs in one click." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.noknokindia.com/404" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nok-Nok" />
+    <meta property="og:title" content="Page Not Found - Nok-Nok - Professional Home Services" />
+    <meta property="og:description" content="We couldn't find the page you're looking for. Explore our professional home services to find what you need." />
+    <meta property="og:image" content="https://www.noknokindia.com/static/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.noknokindia.com/404" />
+    <meta property="og:locale" content="en_IN" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@noknokindia" />
+    <meta name="twitter:title" content="Page Not Found - Nok-Nok - Professional Home Services" />
+    <meta name="twitter:description" content="We couldn't find the page you're looking for. Explore our professional home services to find what you need." />
+    <meta name="twitter:image" content="https://www.noknokindia.com/static/images/og-image.jpg" />
+    <link rel="icon" href="{{ url_for('static', path='images/favicon.ico') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', path='images/apple-touch-icon.png') }}" />
+    
+    <!-- Performance optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="{{ url_for('static', path='css/styles.css') }}" as="style" />
+    <link rel="preload" href="{{ url_for('static', path='js/script.js') }}" as="script" />
+
+    <title>Page Not Found - Nok-Nok | Professional Home Services</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}" />
+    
+    <style>
+      .error-container {
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+      }
+      
+      .error-code {
+        font-size: 8rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+      
+      .error-message {
+        font-size: 2rem;
+        color: var(--text-color);
+        margin-bottom: 2rem;
+      }
+      
+      .error-description {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+      
+      .suggestions {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background-color: rgba(var(--primary-rgb), 0.05);
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+      }
+      
+      .suggestions h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      
+      .suggestions ul {
+        text-align: left;
+        padding-left: 1.5rem;
+      }
+      
+      .suggestions li {
+        margin-bottom: 0.75rem;
+      }
+      
+      .search-box {
+        display: flex;
+        margin: 1.5rem 0;
+        width: 100%;
+        max-width: 500px;
+      }
+      
+      .search-box input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 4px 0 0 4px;
+        font-size: 1rem;
+      }
+      
+      .search-box button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      
+      .error-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="logo">
+        <h1>Nok-<span>Nok</span></h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/#services" title="View Services">Services</a></li>
+        <li><a href="/#about" title="Learn about Nok-Nok">About Us</a></li>
+        <li><a href="/#download" title="Download our App">Download App</a></li>
+      </ul>
+
+      <button class="contact-btn" aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <!-- WhatsApp icon -->
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+          />
+        </svg>
+        <span>9904966966</span>
+      </button>
+
+      <div class="menu-toggle" aria-label="Menu Toggle" role="button" tabindex="0">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <div class="error-container">
+        <div class="error-code" aria-hidden="true">404</div>
+        <h1 class="error-message">Page Not Found</h1>
+        <p class="error-description">
+          We're sorry, but the page you're looking for doesn't exist or has been moved. 
+          Don't worry though, we can help you find what you need.
+        </p>
+        
+        <form action="/#services" method="get" class="search-box" role="search" aria-labelledby="search-title">
+          <span id="search-title" class="visually-hidden">Search for services</span>
+          <input type="text" name="q" placeholder="Search for services..." aria-label="Search for services" required>
+          <button type="submit" aria-label="Submit search">Search</button>
+        </form>
+        
+        <div class="suggestions">
+          <h3>You might be looking for:</h3>
+          <ul>
+            <li><a href="/#services">Our Home Services</a> - Explore our plumbing, electrical, and home repair services</li>
+            <li><a href="/#about">About Nok-Nok</a> - Learn about our company and mission</li>
+            <li><a href="/#download">Download our App</a> - Get the Nok-Nok app on your phone</li>
+          </ul>
+        </div>
+        
+        <div class="error-actions">
+          <a href="/" class="primary-btn pulse">Go to Homepage</a>
+          <a href="https://wa.me/919904966966" class="secondary-btn">Contact Support</a>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="footer-section" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>Nok-<span>Nok</span></h2>
+          <p>Professional home services you can trust.</p>
+          <div class="company-info">
+            <p><strong>NokNok By NTek India</strong></p>
+            <p>219 Neptune Edge, Sarabhai Compound, Near Genda Circle, Vadiwadi, Vadodara- 390007</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/#services">Services</a></li>
+              <li><a href="/#about">About Us</a></li>
+              <li><a href="/#download">Download App</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="/#services">Plumbing</a></li>
+              <li><a href="/#services">Electrical</a></li>
+              <li><a href="/#services">Home Repairs</a></li>
+              <li><a href="/#services">Waterproofing</a></li>
+              <li><a href="/#services">Renovation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="footer-icon">
+                  <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" fill="currentColor"/>
+                </svg>
+                <span>219 Neptune Edge, Sarabhai Compound, Near Genda Circle, Vadiwadi, Vadodara- 390007</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="footer-icon">
+                  <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" fill="currentColor"/>
+                </svg>
+                <span>+91-9904966966</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="footer-icon">
+                  <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" fill="currentColor"/>
+                </svg>
+                <span><a href="#" class="obfuscated-email show-email">Contact Support</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Nok-Nok. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', path='js/script.js') }}"></script>
+  </body>
+</html>
