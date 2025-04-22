@@ -84,7 +84,7 @@ async def health_check():
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "127.0.0.1")
+    host = os.getenv("HOST", "0.0.0.0")
     logger.info(f"Starting server on {host}:{port}")
     logger.info(f"Templates directory: {TEMPLATES_DIR}")
     logger.info(f"Static files directory: {STATIC_DIR}")
