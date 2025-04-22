@@ -17,7 +17,7 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent
 TEMPLATES_DIR = BASE_DIR / "templates"
@@ -31,8 +31,8 @@ if not STATIC_DIR.exists():
     STATIC_DIR.mkdir(parents=True, exist_ok=True)
     logger.warning(f"Created static directory at {STATIC_DIR}")
 app = FastAPI(
-    title="Nok-Nok Home Services API",
-    description="API for Nok-Nok home services website",
+    title="Nok Nok Home Services API",
+    description="API for Nok Nok home services website",
     version="1.0.0",
 )
 
