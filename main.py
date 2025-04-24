@@ -1,93 +1,136 @@
-from fastapi import FastAPI, Request
+# from fastapi import FastAPI, Request
+# from fastapi.staticfiles import StaticFiles
+# from fastapi.templating import Jinja2Templates
+# from fastapi.responses import HTMLResponse
+# from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.trustedhost import TrustedHostMiddleware
+# import os
+# import logging
+# from pathlib import Path
+
+
+# logging.basicConfig(
+#     level=logging.INFO,
+#     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+#     handlers=[
+#         logging.StreamHandler()
+#     ]
+# )
+# logger = logging.getLogger(__name__)
+
+
+# BASE_DIR = Path(__file__).resolve().parent
+# TEMPLATES_DIR = BASE_DIR / "templates"
+# STATIC_DIR = BASE_DIR / "static"
+
+# if not TEMPLATES_DIR.exists():
+#     TEMPLATES_DIR.mkdir(parents=True, exist_ok=True)
+#     logger.warning(f"Created templates directory at {TEMPLATES_DIR}")
+
+# if not STATIC_DIR.exists():
+#     STATIC_DIR.mkdir(parents=True, exist_ok=True)
+#     logger.warning(f"Created static directory at {STATIC_DIR}")
+# app = FastAPI(
+#     title="Nok Nok Home Services API",
+#     description="API for Nok Nok home services website",
+#     version="1.0.0",
+# )
+
+# app.add_middleware(
+#     TrustedHostMiddleware, 
+#     allowed_hosts=[
+#         "localhost", 
+#         "127.0.0.1", 
+#         "noknokindia.com",  
+#         "www.noknokindia.com"  
+#     ]
+# )
+
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "http://localhost",
+#         "http://localhost:8000",
+#         "https://noknokindia.com", 
+#         "https://www.noknokindia.com"  
+#     ],
+#     allow_credentials=True,
+#     allow_methods=["GET", "POST", "OPTIONS"],
+#     allow_headers=["*"],
+# )
+
+# app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+# templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+
+# @app.get("/", response_class=HTMLResponse)
+# async def read_root(request: Request):
+#     try:
+#         return templates.TemplateResponse("index.html", {"request": request})
+#     except Exception as e:
+#         logger.error(f"Error rendering index page: {str(e)}")
+#         return templates.TemplateResponse("404.html", {"request": request, "error": str(e)})
+
+# @app.get("/error", response_class=HTMLResponse)
+# async def error(request: Request):
+#     return templates.TemplateResponse("404.html", {"request": request})
+
+# @app.get("/health")
+# async def health_check():
+#     """
+#     Health check endpoint for monitoring systems
+#     """
+#     return {"status": "healthy", "service": "noknok-api"}
+
+# if __name__ == "__main__":
+#     import uvicorn
+#     port = int(os.getenv("PORT", 8000))
+#     host = os.getenv("HOST", "0.0.0.0")
+#     logger.info(f"Starting server on {host}:{port}")
+#     logger.info(f"Templates directory: {TEMPLATES_DIR}")
+#     logger.info(f"Static files directory: {STATIC_DIR}")
+    
+#     uvicorn.run(app, host=host, port=port, log_level="info")
+
+
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.trustedhost import TrustedHostMiddleware
-import os
-import logging
-from pathlib import Path
+import uvicorn
 
+app = FastAPI()
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+# Mount static files directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
-BASE_DIR = Path(__file__).resolve().parent
-TEMPLATES_DIR = BASE_DIR / "templates"
-STATIC_DIR = BASE_DIR / "static"
-
-if not TEMPLATES_DIR.exists():
-    TEMPLATES_DIR.mkdir(parents=True, exist_ok=True)
-    logger.warning(f"Created templates directory at {TEMPLATES_DIR}")
-
-if not STATIC_DIR.exists():
-    STATIC_DIR.mkdir(parents=True, exist_ok=True)
-    logger.warning(f"Created static directory at {STATIC_DIR}")
-app = FastAPI(
-    title="Nok Nok Home Services API",
-    description="API for Nok Nok home services website",
-    version="1.0.0",
-)
-
-app.add_middleware(
-    TrustedHostMiddleware, 
-    allowed_hosts=[
-        "localhost", 
-        "127.0.0.1", 
-        "yourdomain.com",  
-        "www.yourdomain.com"  
-    ]
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost",
-        "http://localhost:8000",
-        "https://yourdomain.com", 
-        "https://www.yourdomain.com"  
-    ],
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["*"],
-)
-
-app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
-templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+# Set up Jinja2 templates
+templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    try:
-        return templates.TemplateResponse("index.html", {"request": request})
-    except Exception as e:
-        logger.error(f"Error rendering index page: {str(e)}")
-        return templates.TemplateResponse("404.html", {"request": request, "error": str(e)})
-
-@app.get("/error", response_class=HTMLResponse)
-async def error(request: Request):
-    return templates.TemplateResponse("404.html", {"request": request})
-
-@app.get("/health")
-async def health_check():
+async def home(request: Request):
     """
-    Health check endpoint for monitoring systems
+    Home endpoint that renders the index.html template
     """
-    return {"status": "healthy", "service": "noknok-api"}
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/not-found", response_class=HTMLResponse)
+async def not_found(request: Request):
+    """
+    Endpoint that raises a 404 error
+    """
+    raise HTTPException(status_code=404, detail="Resource not found")
+
+# Optional: Custom exception handler for 404 errors to use a template
+@app.exception_handler(404)
+async def custom_404_handler(request: Request, exc: HTTPException):
+    """
+    Custom handler for 404 errors to render a custom 404.html template
+    """
+    return templates.TemplateResponse(
+        "404.html", 
+        {"request": request, "detail": exc.detail}, 
+        status_code=404
+    )
 
 if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "0.0.0.0")
-    logger.info(f"Starting server on {host}:{port}")
-    logger.info(f"Templates directory: {TEMPLATES_DIR}")
-    logger.info(f"Static files directory: {STATIC_DIR}")
-    
-    uvicorn.run(app, host=host, port=port, log_level="info")
-
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
