@@ -42,7 +42,8 @@
     <link rel="alternate" hreflang="en" href="https://www.noknokindia.com/" />
     <link rel="alternate" hreflang="hi" href="https://www.noknokindia.com/hi/" />
     <link rel="alternate" hreflang="gu" href="https://www.noknokindia.com/gu/" />
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
     <!-- Performance optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -152,7 +153,7 @@
         "description": "Renovation, construction, planning and designing, waterproofing."
       }
     </script>
-    
+
     <!-- Website Schema -->
     <script type="application/ld+json">
       {
@@ -167,7 +168,7 @@
         }
       }
     </script>
-    
+
     <!-- Organization Schema -->
     <script type="application/ld+json">
       {
@@ -190,7 +191,7 @@
         }
       }
     </script>
-    
+
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
       {
@@ -237,7 +238,7 @@
         ]
       }
     </script>
-    
+
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
       {
@@ -267,7 +268,7 @@
       gtag('js', new Date());
       gtag('config', 'G-NKNJYTE7FK');
     </script>
-    
+
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -285,7 +286,7 @@
     <!-- Resource hints for AddThis -->
     <link rel="preconnect" href="https://s7.addthis.com" />
     <link rel="dns-prefetch" href="https://s7.addthis.com" />
-    
+
     <!-- AddThis resource hints -->
     <script type="text/javascript">
       // Define AddThis loading function to be used later
@@ -303,7 +304,7 @@
   <body>
     <!-- Skip to main content for accessibility -->
     <!-- <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a> -->
-    
+
     <!-- Navbar -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo-container">
@@ -342,21 +343,21 @@
       <div class="video-container">
         <!-- Replace the src attribute with your video file path -->
         <!-- Optimized hero video with preload strategy -->
-        <video 
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          id="hero-video"
-          poster="{{ url_for('static', path='images/video-poster.jpg') }}"
-          data-lazy-load="true"
-          loading="lazy">
-          <source
-            src="{{ url_for('static', path='videos/video.mp4') }}"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+<video
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  id="hero-video"
+  poster="{{ url_for('static', path='images/video-poster.jpg') }}"
+  style="width: 100%; height: 100%; object-fit: cover;">
+  <source
+    src="{{ url_for('static', path='videos/video.mp4') }}"
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
+</video>
       </div>
 
       <div class="hero-content">
@@ -374,7 +375,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- About Us Section -->
     <section id="about" class="about-section" role="region" aria-labelledby="about-heading">
       <div class="about-container">
@@ -399,17 +400,17 @@
             and construction repair needs.
           </p>
           <p class="about-text">
-            It was a "Eureka -- Nok Nok" moment for us when we realized that not a single 
-            online platform exists where customers can easily find and employ technicians - 
-            not only for routine maintenance and repair works, but can also find professionals 
-            that cater initial planning and designing needs. Hence, we developed NOK NOK, 
+            It was a "Eureka -- Nok Nok" moment for us when we realized that not a single
+            online platform exists where customers can easily find and employ technicians -
+            not only for routine maintenance and repair works, but can also find professionals
+            that cater initial planning and designing needs. Hence, we developed NOK NOK,
             a mobile application that brings skilled technicians and experienced
             professionals on a common platform for end users' convenience.
           </p>
           <p class="about-text">
-            What sets us apart is our commitment to customer satisfaction, transparent 
-            pricing, and attention to detail. We understand that inviting someone into 
-            your home requires trust, which is why all our professionals are thoroughly 
+            What sets us apart is our commitment to customer satisfaction, transparent
+            pricing, and attention to detail. We understand that inviting someone into
+            your home requires trust, which is why all our professionals are thoroughly
             vetted, trained, and insured.
           </p>
           <p class="about-text">
@@ -595,7 +596,7 @@
         <div class="download-content">
           <h2 id="download-heading" class="section-title">Download Our <span>App</span></h2>
           <p class="download-text">
-            Get instant access to our professional home services right from your phone. 
+            Get instant access to our professional home services right from your phone.
             Download the Nok Nok mobile application and experience convenience at your fingertips.
           </p>
           <div class="download-buttons">
@@ -626,12 +627,12 @@
           </div> -->
         </div>
         <div class="app-showcase">
-          <img 
-            src="{{ url_for('static', path='images/app-playstore.png') }}" 
-            alt="Nok Nok App Screenshots showing plumbing and electrical service booking interface" 
-            class="app-image" 
-            width="375" 
-            height="667" 
+          <img
+            src="{{ url_for('static', path='images/app-playstore.png') }}"
+            alt="Nok Nok App Screenshots showing plumbing and electrical service booking interface"
+            class="app-image"
+            width="375"
+            height="667"
             loading="lazy"
             srcset="{{ url_for('static', path='images/app-playstore.png') }} 1x, {{ url_for('static', path='images/app-playstore.png') }} 2x"
             sizes="(max-width: 768px) 90vw, 375px"
@@ -642,7 +643,7 @@
 
     <!-- Download App Section End -->
     </main> <!-- Closing main content wrapper -->
-    
+
     <!-- Footer Section -->
     <footer class="footer-section" role="contentinfo">
       <div class="footer-container">
@@ -791,7 +792,7 @@
     </footer>
 
     <script src="{{ url_for('static', path='js/script.js') }}" defer></script>
-    
+
     <!-- Structured Data for Local Business -->
     <script type="application/ld+json">
       {
@@ -805,7 +806,7 @@
         "url": "https://www.noknokindia.com/"
       }
     </script>
-    
+
     <!-- Email obfuscation script -->
     <script>
       function decodeEmail(encodedEmail) {
@@ -813,18 +814,18 @@
           return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
         });
       }
-      
+
       function setupEmailObfuscation() {
         const encodedEmail = "fhccbeg@abxabxvaqvn.pbz";
         const decodedEmail = decodeEmail(encodedEmail);
         const emailLinks = document.querySelectorAll('.obfuscated-email');
-        
+
         emailLinks.forEach(link => {
           link.setAttribute('href', 'mailto:' + decodedEmail);
           link.textContent = 'support@noknokindia.com';
         });
       }
-      
+
       document.addEventListener('DOMContentLoaded', setupEmailObfuscation);
     </script>
     <!-- AddThis Social Sharing - optimized loading -->
@@ -837,7 +838,7 @@
           loaded = true;
           loadAddThis();
         }
-        
+
         // Load when user scrolls or after 3 seconds
         window.addEventListener('scroll', loadShareButtons, {once: true, passive: true});
         window.addEventListener('mousemove', loadShareButtons, {once: true, passive: true});

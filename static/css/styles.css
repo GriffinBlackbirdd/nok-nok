@@ -83,7 +83,7 @@ ul {
 }
 
 /* Button Styles */
-.primary-btn, 
+.primary-btn,
 .secondary-btn {
   display: inline-flex;
   align-items: center;
@@ -221,18 +221,18 @@ ul {
   width: 100%;
 }
 .logo-container {
-  background-color: white; 
+  background-color: white;
   padding: 8px 15px;
   border-radius: 10px;
-  backdrop-filter: blur(3px); 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: var(--transition);
 }
 
 .navbar.scrolled .logo-container {
   background-color: transparent;
-  box-shadow: none; 
-  backdrop-filter: none; 
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .contact-btn {
   background-color: var(--whatsapp);
@@ -1279,8 +1279,8 @@ ul {
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
-  .container, 
-  .about-container, 
+  .container,
+  .about-container,
   .download-container,
   .footer-container,
   .footer-bottom {
@@ -1294,31 +1294,31 @@ ul {
   .service-card {
     flex: 1 1 calc(50% - 20px);
   }
-  
+
   /* About section */
   .about-container {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .section-title::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .about-features {
     justify-content: center;
   }
-  
+
   /* Download section */
   .download-content {
     text-align: center;
   }
-  
+
   .download-buttons {
     justify-content: center;
   }
-  
+
   .download-text {
     margin-left: auto;
     margin-right: auto;
@@ -1340,75 +1340,75 @@ ul {
     transition: right 0.5s ease;
     z-index: 999;
   }
-  
+
   .nav-links.active {
     right: 0;
   }
-  
+
   .menu-toggle {
     display: block;
   }
-  
+
   .menu-toggle.active .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
+
   .menu-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
-  
+
   .menu-toggle.active .bar:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
-  
+
   /* Hero section */
   .hero-buttons {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
   }
-  
+
   /* Services section */
   .services-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .service-card {
     flex: 1 1 100%;
     max-width: 450px;
   }
-  
+
   /* Footer */
   .footer-links {
     flex-direction: column;
   }
-  
+
   .footer-column {
     text-align: center;
   }
-  
+
   .footer-column h3::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .contact-info li {
     justify-content: center;
   }
-  
+
   .footer-social {
     text-align: center;
   }
-  
+
   .social-icons {
     justify-content: center;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
   }
-  
+
   .footer-bottom-links {
     justify-content: center;
   }
@@ -1418,35 +1418,35 @@ ul {
   :root {
     --section-padding: 60px 20px;
   }
-  
+
   /* Chatbot */
   .chatbot-container {
     width: 90%;
     right: 5%;
     left: 5%;
   }
-  
+
   .chatbot-toggle {
     width: 50px;
     height: 50px;
   }
-  
+
   .chatbot-icon {
     width: 24px;
     height: 24px;
   }
-  
+
   /* About section */
   .feature {
     flex: 1 1 100%;
   }
-  
+
   /* App store buttons */
   .download-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .app-btn {
     width: 100%;
     max-width: 200px;
@@ -1460,36 +1460,36 @@ ul {
   .navbar {
     padding: 15px;
   }
-  
+
   .navbar.scrolled {
     padding: 10px 15px;
   }
-  
+
   .contact-btn {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
-  
+
   .contact-btn svg {
     width: 16px;
     height: 16px;
   }
-  
+
   .feature-icon {
     width: 50px;
     height: 50px;
   }
-  
+
   .feature-icon svg {
     width: 25px;
     height: 25px;
   }
-  
+
   .service-icon {
     width: 70px;
     height: 70px;
   }
-  
+
   .service-icon svg {
     width: 35px;
     height: 35px;
@@ -1508,22 +1508,22 @@ ul {
   .logo h1 {
     font-size: 20px;
   }
-  
+
   .feature-icon {
     width: 45px;
     height: 45px;
   }
-  
+
   .feature-icon svg {
     width: 22px;
     height: 22px;
   }
-  
+
   .service-icon {
     width: 60px;
     height: 60px;
   }
-  
+
   .service-icon svg {
     width: 30px;
     height: 30px;
@@ -1540,35 +1540,35 @@ ul {
   .chatbot-widget {
     display: none !important;
   }
-  
+
   body {
     color: black;
     background: white;
     font-size: 12pt;
     line-height: 1.5;
   }
-  
+
   .hero {
     height: auto;
   }
-  
+
   .video-container {
     display: none;
   }
-  
+
   .hero-content {
     color: black;
     position: static;
   }
-  
+
   .hero-title, .section-title {
     color: black;
   }
-  
+
   .hero-subtitle {
     color: #333;
   }
-  
+
   .feature,
   .service-card {
     break-inside: avoid;
@@ -1576,22 +1576,51 @@ ul {
     box-shadow: none;
     border: 1px solid #eee;
   }
-  
+
   a {
     text-decoration: none;
     color: black;
   }
-  
+
   a::after {
     content: " (" attr(href) ")";
     font-size: 90%;
   }
-  
+
   /* Remove all animations and transitions */
   * {
     animation: none !important;
     transition: none !important;
     transform: none !important;
     box-shadow: none !important;
+  }
+}
+
+/* Mobile video optimization - add this to your existing CSS */
+@media screen and (max-width: 768px) {
+  .hero video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+  }
+
+  /* Ensure video container is properly sized on mobile */
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Additional mobile-specific video rules */
+@media screen and (max-width: 480px) {
+  /* Force video to play on very small screens */
+  .hero video {
+    min-width: 100%;
+    min-height: 100%;
   }
 }

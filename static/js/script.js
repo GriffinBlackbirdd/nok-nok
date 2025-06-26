@@ -48,7 +48,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 (function() {
   // Flag to ensure initialization only happens once
   let chatbotInitialized = false;
-  
+
   // Function to initialize chatbot
   function initChatbot() {
     // Prevent multiple initializations
@@ -56,16 +56,16 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       console.log("Chatbot already initialized, skipping");
       return;
     }
-    
+
     console.log("Initializing chatbot...");
-    
+
     const chatbotToggle = document.getElementById('chatbot-toggle');
     const chatbotContainer = document.getElementById('chatbot-container');
     const chatbotClose = document.getElementById('chatbot-close');
     const chatbotMessages = document.getElementById('chatbot-messages');
     const chatbotInput = document.getElementById('chatbot-input-field');
     const chatbotSend = document.getElementById('chatbot-send');
-    
+
     // Debug check
     console.log("Elements found:", {
       toggle: !!chatbotToggle,
@@ -75,7 +75,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       input: !!chatbotInput,
       send: !!chatbotSend
     });
-    
+
     if (!chatbotToggle || !chatbotContainer) {
       console.error("Critical chatbot elements not found");
       return; // Exit if critical elements are missing
@@ -91,7 +91,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     let waitingForEmail = false;
     let waitingForPhone = false;
     let previousMessage = "";
-    
+
     // Add CSS for animations and styling fixes
     const style = document.createElement('style');
     style.textContent = `
@@ -138,7 +138,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         height: 100%;
         scrollbar-width: thin;
       }
-      
+
       /* Improved send button styles */
       .chatbot-input button {
         background-color: var(--primary);
@@ -156,18 +156,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         margin-left: 8px;
       }
-      
+
       .chatbot-input button:hover {
         background-color: #e05e1c;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
-      
+
       .chatbot-input button:active {
         transform: translateY(0);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-      
+
       .chatbot-input button svg {
         fill: white;
         width: 18px;
@@ -175,11 +175,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         transform: rotate(15deg);
         transition: transform 0.2s ease;
       }
-      
+
       .chatbot-input button:hover svg {
         transform: rotate(0deg) scale(1.1);
       }
-      
+
       /* Improved input box */
       .chatbot-input {
         padding: 12px 15px;
@@ -190,7 +190,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
       }
-      
+
       .chatbot-input input {
         flex: 1;
         padding: 12px 15px;
@@ -201,7 +201,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         background-color: #f8f8f8;
         transition: all 0.3s ease;
       }
-      
+
       .chatbot-input input:focus {
         border-color: var(--primary);
         box-shadow: 0 0 0 3px rgba(225, 113, 42, 0.15);
@@ -214,7 +214,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     chatbotToggle.addEventListener('click', function() {
       console.log("Toggle clicked");
       chatbotContainer.classList.toggle('active');
-      
+
       // Use direct style manipulation as backup
       if (chatbotContainer.classList.contains('active')) {
         chatbotContainer.style.transform = 'scale(1)';
@@ -267,7 +267,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       const loadingDiv = document.createElement('div');
       loadingDiv.className = 'chatbot-message bot loading';
       loadingDiv.id = 'loading-message';
-      
+
       const avatarDiv = document.createElement('div');
       avatarDiv.className = 'chatbot-avatar';
       avatarDiv.innerHTML = `
@@ -276,12 +276,12 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         </svg>
       `;
       loadingDiv.appendChild(avatarDiv);
-      
+
       const contentDiv = document.createElement('div');
       contentDiv.className = 'message-content';
       contentDiv.innerHTML = `<p>Typing<span class="dot-animation">...</span></p>`;
       loadingDiv.appendChild(contentDiv);
-      
+
       if (chatbotMessages) {
         chatbotMessages.appendChild(loadingDiv);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
@@ -299,19 +299,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     // Handle sending a message to the backend
     async function sendMessage() {
       if (!chatbotInput) return;
-      
+
       const message = chatbotInput.value.trim();
       if (!message) return;
-      
+
       // Add user message to chat
       addMessage(message, true);
       chatbotInput.value = '';
-      
+
       // If waiting for email, treat this input as email
       if (waitingForEmail) {
         userEmail = message;
         waitingForEmail = false;
-        
+
         // Validate email format (basic validation)
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(userEmail)) {
@@ -320,17 +320,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           waitingForEmail = true;
           return;
         }
-        
+
         addMessage(`Thank you for providing your email (${userEmail}). Now, could you please provide your phone number?`, false);
         waitingForPhone = true;
         return;
       }
-      
+
       // If waiting for phone, treat this input as phone
       if (waitingForPhone) {
         userPhone = message;
         waitingForPhone = false;
-        
+
         // Validate phone format (basic validation)
         const phonePattern = /^[0-9+\-\s()]{10,15}$/;
         if (!phonePattern.test(userPhone.replace(/\s+/g, ''))) {
@@ -339,17 +339,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           waitingForPhone = true;
           return;
         }
-        
+
         addMessage(`Thank you for providing your phone number (${userPhone}). I'll continue processing your request.`, false);
-        
+
         // Process the original message with both email and phone
         processMessageWithBackend(previousMessage, userEmail, userPhone);
         return;
       }
-      
+
       // Store message in case we need to reprocess it with contact info
       previousMessage = message;
-      
+
       // Process the message with the backend
       processMessageWithBackend(message, userEmail, userPhone);
     }
@@ -357,10 +357,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     // Function to communicate with the backend
     async function processMessageWithBackend(message, email = null, phone = null) {
       showLoading();
-      
+
       try {
         console.log("Sending message to backend:", message);
-        
+
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: {
@@ -373,19 +373,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             phone: phone
           }),
         });
-        
+
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
         }
-        
+
         const data = await response.json();
         console.log("Response from backend:", data);
-        
+
         removeLoading();
-        
+
         // Add the bot response to the chat
         addMessage(data.response, false);
-        
+
         // Check if contact information is needed
         if (data.needsEmail && !userEmail) {
           waitingForEmail = true;
@@ -425,7 +425,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   }
 
   // Try different methods to initialize, but use flags to prevent multiple initializations
-  
+
   // Method 1: Immediate if document is ready
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     console.log("Document already interactive/complete, initializing immediately");
@@ -435,7 +435,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     console.log("Waiting for DOMContentLoaded");
     document.addEventListener('DOMContentLoaded', initChatbot);
   }
-  
+
   // Method 3: Fallback with delay
   if (!chatbotInitialized) {
     console.log("Setting timeout fallback");
@@ -445,60 +445,83 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Function to handle responsive video background
-  function setupResponsiveVideo() {
-    const video = document.querySelector('.hero video');
-    
-    if (!video) return; // Exit if no video element
-    
-    // Check if device is mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // On mobile devices, maybe use a static background instead of video
-      const heroSection = document.querySelector('.hero');
-      if (heroSection) {
-        // Get the poster image URL
-        const posterUrl = video.getAttribute('poster');
-        if (posterUrl) {
-          // Set background image from poster
-          heroSection.style.backgroundImage = 'url("' + posterUrl + '")';
-          heroSection.style.backgroundSize = 'cover';
-          heroSection.style.backgroundPosition = 'center center';
-        }
-        
-        // Optionally hide video on mobile to save bandwidth
-        // Uncomment the next line if you want to disable video on mobile
-        // video.style.display = 'none';
-      }
-    }
-    
-    // Ensure video attributes are set correctly
-    video.setAttribute('playsinline', '');
-    video.setAttribute('muted', '');
-    video.setAttribute('loop', '');
-    video.muted = true; // Explicitly set muted for browsers that need it
-    
-    // Try to play the video (some browsers block autoplay)
-    if (video.paused) {
-      video.play().catch(e => {
-        console.log('Auto-play was prevented:', e);
-        // If autoplay is prevented, show the poster as fallback
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-          const posterUrl = video.getAttribute('poster');
-          if (posterUrl) {
-            heroSection.style.backgroundImage = 'url("' + posterUrl + '")';
-            heroSection.style.backgroundSize = 'cover';
-            heroSection.style.backgroundPosition = 'center center';
+// Function to handle responsive video background
+function setupResponsiveVideo() {
+  const video = document.querySelector('.hero video');
+
+  if (!video) return; // Exit if no video element
+
+  // Set essential video attributes for mobile compatibility
+  video.setAttribute('playsinline', '');
+  video.setAttribute('muted', '');
+  video.setAttribute('loop', '');
+  video.setAttribute('preload', 'metadata');
+  video.muted = true; // Explicitly set muted
+  video.playsInline = true; // iOS specific
+
+  // Check if device is mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  // Force play the video with better error handling
+  function attemptPlay() {
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          console.log('Video started playing successfully');
+        })
+        .catch(error => {
+          console.log('Auto-play was prevented:', error);
+
+          // Fallback: Show poster image
+          const heroSection = document.querySelector('.hero');
+          if (heroSection) {
+            const posterUrl = video.getAttribute('poster');
+            if (posterUrl) {
+              heroSection.style.backgroundImage = `url("${posterUrl}")`;
+              heroSection.style.backgroundSize = 'cover';
+              heroSection.style.backgroundPosition = 'center center';
+              heroSection.style.backgroundRepeat = 'no-repeat';
+            }
           }
-        }
-      });
+        });
     }
   }
-  
+
+  // Try to play immediately
+  if (video.readyState >= 3) {
+    attemptPlay();
+  } else {
+    video.addEventListener('loadeddata', attemptPlay, { once: true });
+  }
+
+  // iOS specific handling
+  if (isIOS) {
+    // For iOS, we need to be more aggressive about starting playback
+    video.addEventListener('loadstart', () => {
+      setTimeout(attemptPlay, 100);
+    });
+  }
+
+  // Handle user interaction to start video (required by some browsers)
+  function startVideoOnInteraction() {
+    if (video.paused) {
+      attemptPlay();
+    }
+    // Remove listeners after first interaction
+    document.removeEventListener('touchstart', startVideoOnInteraction);
+    document.removeEventListener('click', startVideoOnInteraction);
+  }
+
+  document.addEventListener('touchstart', startVideoOnInteraction, { passive: true });
+  document.addEventListener('click', startVideoOnInteraction);
+}
+
   // Run the setup on page load
   setupResponsiveVideo();
-  
+
   // Also run on resize to handle orientation changes
   window.addEventListener('resize', setupResponsiveVideo);
 });
